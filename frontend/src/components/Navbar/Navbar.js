@@ -2,7 +2,7 @@ import './Navbar.css'
 import { useEffect } from 'react';
 import { web3auth } from '../../ConnectWallet/ConnectWallet';
 
-function Navbar({ openModal, account, walletConnected, setWalletConnected, setAccount  }) {
+function Navbar({ walletConnected, setWalletConnected }) {
 
   // Connecting wallet 
   const handleConnect = async () => {
@@ -19,7 +19,7 @@ function Navbar({ openModal, account, walletConnected, setWalletConnected, setAc
   const handleDisconnect = () => {
     try {
       setWalletConnected(false); 
-      setAccount(""); 
+    //   setAccount(""); 
       console.log("Account disconnected!"); 
     } catch (error){
       console.error(error)
@@ -28,7 +28,7 @@ function Navbar({ openModal, account, walletConnected, setWalletConnected, setAc
 
   useEffect(() => {
     // Console log the account connected
-    console.log("Account is: ", account); 
+    // console.log("Account is: ", account); 
   })
 
 
@@ -47,13 +47,13 @@ function Navbar({ openModal, account, walletConnected, setWalletConnected, setAc
         {
           walletConnected && (
             <div>
-              {
+              {/* {
                 account && (
                   <button className='connect-button'>
                     { account.slice(0,6) + "..." + account.slice(38,42) }
                   </button>
                 )
-              }
+              } */}
               <button className='connect-button' onClick={handleDisconnect}>Disconnect Wallet</button>
             </div>
           )

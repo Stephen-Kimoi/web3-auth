@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import './App.css'
+import Navbar from './components/Navbar/Navbar'
+// import ConnectWalletModal from './components/ConnectWalletModal/ConnectWalletModal';
+// import Header from './components/Header/Header';
+
 
 function App() {
+  // const [modalIsOpen, setModalIsOpen] = useState(false);
+  // const [account, setAccount] = useState(""); 
+  const [walletConnected, setWalletConnected] = useState(false); 
+
+
+  // function openModal() {
+  //   setModalIsOpen(true);
+  // }
+
+  // function closeModal() {
+  //   setModalIsOpen(false);
+  // }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+
+       {/* <ConnectWalletModal 
+        modalIsOpen={modalIsOpen}
+        closeModal={closeModal}
+        setWalletConnected={setWalletConnected}
+        setAccount={setAccount}
+      /> */}
+
+      <Navbar 
+        // openModal={openModal}
+        // account={account} 
+        walletConnected={walletConnected} 
+        setWalletConnected={setWalletConnected}
+        // setAccount={setAccount}
+      />
+
+      {/* <Header 
+        walletConnected={walletConnected}
+      /> */}
+    </>
+
+  )
 }
 
-export default App;
+export default App
