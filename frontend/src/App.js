@@ -2,13 +2,14 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 // import ConnectWalletModal from './components/ConnectWalletModal/ConnectWalletModal';
-// import Header from './components/Header/Header';
+import Header from './components/Header/Header';
 
 
 function App() {
   // const [modalIsOpen, setModalIsOpen] = useState(false);
   // const [account, setAccount] = useState(""); 
   const [walletConnected, setWalletConnected] = useState(false); 
+  const [provider, setProvider] = useState(); 
 
 
   // function openModal() {
@@ -34,12 +35,14 @@ function App() {
         // account={account} 
         walletConnected={walletConnected} 
         setWalletConnected={setWalletConnected}
+        setProvider={setProvider}
         // setAccount={setAccount}
       />
 
-      {/* <Header 
+      <Header 
         walletConnected={walletConnected}
-      /> */}
+        provider={provider}
+      />
     </>
 
   )

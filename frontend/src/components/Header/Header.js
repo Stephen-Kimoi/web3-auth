@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import contractInstance from '../../ContractInstance/ContractInstance';
-import './Header.css'
+import './Header.css'; 
 
-function Header({ walletConnected }) {
+function Header({ walletConnected, provider }) {
   const [inputMessage, setInputMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false); 
   const [isSuccess, setIsSuccess] = useState(false); 
@@ -11,7 +11,7 @@ function Header({ walletConnected }) {
   const sendInputMessage = async (e) => {
     try {
       e.preventDefault();
-      const simpleStorage = await contractInstance(true); 
+      const simpleStorage = await contractInstance(true, provider); 
       
       setIsLoading(true); 
       const tx = await simpleStorage.set(inputMessage); 
